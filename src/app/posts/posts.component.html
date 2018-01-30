@@ -1,0 +1,12 @@
+<div fxLayout="row">
+
+<mat-card fxFlex="66" fxFlex.xs="100" fxFlexOffset="10" fxFlexOffset.xs="0" class="the-post-card">
+
+  <div wpCollection="posts" [wpArgs]="{ _embed: true }" (wpResponse)="res = $event">
+
+    <app-postitem *ngFor="let post of res.data" [data]="post"></app-postitem>
+
+  </div>
+</mat-card>
+  <div fxFlex fxHide.xs="true" >This is the sidebar</div>
+</div>
